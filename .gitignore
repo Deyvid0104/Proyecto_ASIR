@@ -1,0 +1,5 @@
+# Ignorar todas las subcarpetas dentro de nginx, pero no los archivos
+nginx/*/
+    
+# Ignorar los archivos .env
+.env

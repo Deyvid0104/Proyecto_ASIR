@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mariadb-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /opt/data/mariadb   # Usar una ruta del sistema accesible por K3s
+                              # sudo mkdir -p /opt/data/mariadb
+                              # sudo chown -R 1001:1001 /opt/data/mariadb   # o el UID del contenedor de MariaDB
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

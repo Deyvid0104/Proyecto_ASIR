@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mariadb-remote-config
+data:
+  50-server.cnf: |
+    [mysqld]
+    bind-address=0.0.0.0
