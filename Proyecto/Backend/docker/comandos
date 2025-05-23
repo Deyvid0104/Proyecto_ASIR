@@ -1,0 +1,7 @@
+# Relanzar el contenedor
+docker build --no-cache -t deyvid14/hospeda_backend:v3 .
+
+# Subir la imagen al repositorio
+docker push deyvid14/hospeda_backend:v3
+
+# Aplicar los cambios en el deployment

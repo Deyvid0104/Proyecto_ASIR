@@ -15,6 +15,7 @@ spec:
       containers:
         - name: backend
           image: deyvid14/hospeda_backend:v3
+          imagePullPolicy: Always  # 👈 Fuerza descargar siempre la imagen
           ports:
             - containerPort: 4000
           env:
@@ -56,60 +57,3 @@ spec:
                 secretKeyRef:
                   name: backend-secret
                   key: PASSWORD_KEY
-
-
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: hospeda-backend
-# spec:
-#   replicas: 2
-#   selector:
-#     matchLabels:
-#       app: hospeda-backend
-#   template:
-#     metadata:
-#       labels:
-#         app: hospeda-backend
-#     spec:
-#       containers:
-#       - name: backend
-#         image: deyvid14/hospeda_backend:v1
-#         ports:
-#         - containerPort: 4000
-#         env:
-#         - name: PUERTO
-#           valueFrom:
-#             secretKeyRef:
-#               name: backend-secret
-#               key: PUERTO
-#         - name: DBNAME
-#           valueFrom:
-#             secretKeyRef:
-#               name: backend-secret
-#               key: DBNAME
-#         - name: URL
-#           valueFrom:
-#             secretKeyRef:
-#               name: backend-secret
-#               key: URL
-#         - name: PUERTO_DB
-#           valueFrom:
-#             secretKeyRef:
-#               name: backend-secret
-#               key: PUERTO_DB
-#         - name: USUARIO
-#           valueFrom:
-#             secretKeyRef:
-#               name: backend-secret
-#               key: USUARIO
-#         - name: PASSWORD
-#           valueFrom:
-#             secretKeyRef:
-#               name: backend-secret
-#               key: PASSWORD
-#         - name: PASSWORD_KEY
-#           valueFrom:
-#             secretKeyRef:
-#               name: backend-secret
-#               key: PASSWORD_KEY

@@ -1,0 +1,18 @@
+# Aplicar los cambios en el deployment
+kubectl apply -f backend-deployment.yaml
+
+# Acceder al contenedor de kubernetes
+kubectl exec -it hospeda-backend-[] -- bash
+
+
+kubectl get deploy
+
+kubectl delete deploy hospeda-backend
+
+kubectl apply -f backend-deployment.yaml
+
+kubectl rollout restart deployment/hospeda-backend
+
+
+crictl images
+crictl rmi deyvid14/hospeda_backend:v3
