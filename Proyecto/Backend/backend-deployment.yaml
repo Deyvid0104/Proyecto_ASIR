@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: deyvid14/hospeda_backend:v4
+          image: deyvid14/hospeda_backend:latest
           imagePullPolicy: Always  # 👈 Fuerza descargar siempre la imagen
           ports:
             - containerPort: 4000
